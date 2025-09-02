@@ -5,7 +5,7 @@ import { useTheme } from '../utils/ThemeContext';
 import NavHeader from './NavHeader';
 
 const Header = () => {
-  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Header = () => {
       className={`fixed top-0 left-0 w-full font-bold text-md min-h-[60px] z-50 ${isDarkMode ? 'text-[#ffedcf]' : 'text-[#020817]'}`}
     >
       <div
-        className={`flex flex-col sm:flex-row justify-around items-center ${isDarkMode ? 'bg-[#081e44]' : 'bg-[#ffffff]'} shadow-md p-1  relative`}
+        className={`flex flex-col sm:flex-row justify-around items-center ${isDarkMode ? 'bg-[linear-gradient(to_right,#081e44,#15202B)]' : 'bg-[linear-gradient(to_right,#ffffff,#ffedcf)]'} shadow-md p-1  relative`}
       >
         <Link to="/">
           <img
@@ -56,10 +56,10 @@ const Header = () => {
 
         {/* Menu Mobile */}
         <div
-          className={`md:hidden absolute left-0 top-full border-t-solid border-t w-full ${isDarkMode ? 'bg-[#081e44]' : 'bg-[#ffffff]'} transition-all duration-300 ease-in-out overflow-hidden ${isBurgerMenuOpen ? 'opacity-100 max-h-100' : 'max-h-0 opacity-0'} `}
+          className={`md:hidden absolute left-0 top-full border-t-solid border-t border-b w-full ${isDarkMode ? 'bg-[linear-gradient(to_right,#081e44,#15202B)]' : 'bg-[linear-gradient(to_right,#ffffff,#ffedcf)]'} transition-all duration-300 ease-in-out overflow-hidden ${isBurgerMenuOpen ? 'opacity-100 max-h-100' : 'max-h-0 opacity-0'} `}
         >
           <NavHeader className="flex flex-col gap-8 items-center mt-5" />
-          <div className="flex justify-center align-middle mt-5 border-t-2 border-dotted">
+          <div className="flex justify-center align-middle mt-5">
             <button
               onClick={toggleTheme}
               type="button"
