@@ -1,18 +1,27 @@
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { useTheme } from '../utils/ThemeContext';
 import NavHeader from './NavHeader';
-import SocialLinksHeader from './SocialLinksHeader';
 
 const Header = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    console.log(isDarkMode);
+  }, [isDarkMode]);
 
   return (
-    <header className="fixed top-0 left-0 w-full text-[#ffedcf] font-bold text-xl">
-      <div className="flex flex-col sm:flex-row justify-around items-center mx-auto md:w-[90%] bg-[#262641ea] shadow-md p-2 md:rounded-b-xl relative">
+    <header
+      className={`fixed top-0 left-0 w-full font-bold text-md min-h-[60px] z-50 ${isDarkMode ? 'text-[#ffedcf]' : 'text-[#020817]'}`}
+    >
+      <div
+        className={`flex flex-col sm:flex-row justify-around items-center ${isDarkMode ? 'bg-[#081e44]' : 'bg-[#ffffff]'} shadow-md p-1  relative`}
+      >
         <Link to="/">
           <img
-            className="h-20 w-20 hover:scale-110 transition-all duration-200"
+            className="h-15 w-15 hover:scale-110 transition-all duration-200"
             src={'/images/logo.png'}
             alt="Vite logo"
           />
@@ -37,14 +46,28 @@ const Header = () => {
 
         {/* Navigation desktop */}
         <NavHeader className="hidden md:flex flex-row gap-8 lg:gap-15" />
-        <SocialLinksHeader className="hidden md:flex flex-row gap-8 lg:gap-15" />
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className={`cursor-pointer hidden md:flex items-center align-middle rounded p-2 bg-transparent ${isDarkMode ? 'hover:bg-[#020817]' : 'hover:bg-[#dad4c1]'} transition-all duration-200`}
+        >
+          {isDarkMode ? <Sun /> : <Moon />}
+        </button>
 
         {/* Menu Mobile */}
         <div
-          className={`md:hidden absolute left-0 top-full border-t-solid border-t w-full bg-[#262641] transition-all duration-300 ease-in-out overflow-hidden ${isBurgerMenuOpen ? 'opacity-100 max-h-100' : 'max-h-0 opacity-0'} `}
+          className={`md:hidden absolute left-0 top-full border-t-solid border-t w-full ${isDarkMode ? 'bg-[#081e44]' : 'bg-[#ffffff]'} transition-all duration-300 ease-in-out overflow-hidden ${isBurgerMenuOpen ? 'opacity-100 max-h-100' : 'max-h-0 opacity-0'} `}
         >
           <NavHeader className="flex flex-col gap-8 items-center mt-5" />
-          <SocialLinksHeader className="flex flex-row gap-20 my-4 justify-center mt-6 pt-6 border-t border-dotted" />
+          <div className="flex justify-center align-middle mt-5 border-t-2 border-dotted">
+            <button
+              onClick={toggleTheme}
+              type="button"
+              className={`cursor-pointer items-center align-middle rounded p-2 bg-transparent ${isDarkMode ? 'hover:bg-[#020817]' : 'hover:bg-[#dad4c1]'} transition-all duration-200`}
+            >
+              {isDarkMode ? <Sun /> : <Moon />}
+            </button>
+          </div>
         </div>
       </div>
     </header>

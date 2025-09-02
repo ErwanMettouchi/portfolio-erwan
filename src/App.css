@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+:root {
+  --bg-primary: #020817;
+  --bg-secondary: #234A8C;
+  --text-primary: #ffedcf;
+}
+
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffedcf;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #081e44;
+  --bg-secondary: #15202B;
+}
+
+/* Styles pour le thème clair */
+body[data-theme="light"] {
+  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+/* Styles pour le thème sombre */
+body[data-theme="dark"] {
+  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
