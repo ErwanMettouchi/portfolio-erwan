@@ -18,13 +18,13 @@
 
 /* Styles pour le thème clair */
 body[data-theme="light"] {
-  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+  background: linear-gradient(to right, var(--bg-primary), var(--bg-secondary));
   color: var(--text-primary);
   overflow-x: hidden;
 }
 /* Styles pour le thème sombre */
 body[data-theme="dark"] {
-  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+  background: linear-gradient(to right, var(--bg-primary), var(--bg-secondary));
   color: var(--text-primary);
   overflow-x: hidden;
 }

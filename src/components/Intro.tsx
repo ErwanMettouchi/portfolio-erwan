@@ -6,8 +6,12 @@ const Intro = () => {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className="flex flex-col justify-center mt-35 sm:mt-0 min-h-screen z-0">
-      <div className="flex flex-col gap-4 justify-start w-[40%] max-w-[90%] mx-[20%]">
+    // biome-ignore lint/correctness/useUniqueElementIds: <explanation>
+    <div
+      className="flex flex-col justify-center mt-35 sm:mt-0 min-h-screen z-0"
+      id="accueil"
+    >
+      <div className="flex flex-col gap-4 justify-start mx-auto  w-[40%] max-w-[90%] sm:mx-[20%]">
         <h1
           className={`font-bold ${isDarkMode ? 'text-[#ffedcf]' : 'text-[#081e44]'} text-4xl md:text-6xl`}
         >
@@ -34,7 +38,7 @@ const Intro = () => {
           </a>
           <a
             href="#parcours"
-            className={`flex flex-row items-center justify-center text-md md:text-lg font-semibold border-1 py-2 px-4 rounded bg-transparent ${isDarkMode ? 'text-[#ffedcf]  border-[#ffedcf]  hover:bg-[#1E293B] hover:border-[#1E293B]' : 'text-[#262641ea] border-[#262641ea] hover:bg-[#ffedcf] hover:border-[#ffedcf] '} transition-all duration-200`}
+            className={`flex flex-row items-center justify-center text-md md:text-lg font-semibold border-1 py-2 px-4 rounded bg-transparent ${isDarkMode ? 'text-[#ffedcf]  border-[#ffedcf]  hover:bg-[#1E293B] hover:border-[#1E293B]' : 'text-[#262641ea] border-[#262641ea] hover:bg-[#fdd082] hover:border-[#fdd082] '} transition-all duration-200`}
           >
             Mon parcours &nbsp;
             <ChevronDown color={`${isDarkMode ? '#ffedcf' : '#081e44'}`} />
