@@ -1,4 +1,4 @@
-import { useTheme } from '../utils/ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Profile = () => {
   const { isDarkMode } = useTheme();
@@ -9,6 +9,7 @@ const Profile = () => {
     'JavaScript',
     'TypeScript',
     'React',
+    'Tailwind CSS',
     'Node.js',
     'ExpressJs',
     'Sequelize',
@@ -18,7 +19,7 @@ const Profile = () => {
   return (
     // biome-ignore lint/correctness/useUniqueElementIds: <explanation>
     <section
-      className="mt-20 sm:mt-0 min-w-[60%] max-w-[60%] mx-auto"
+      className="mt-20 sm:mt-1 min-w-[60%] max-w-[60%] mx-auto"
       id="profil"
     >
       <h2
@@ -78,11 +79,11 @@ const Profile = () => {
         </div>
         <div className="flex justify-center items-center mx-auto md:mx-0 flex-shrink-0">
           <div
-            className={`w-64 h-64 sm:w-100 sm:h-100 lg:w-80 lg:h-80 rounded-[50%] overflow-hidden shadow-lg border-3 border-solid ${isDarkMode ? 'border-[#ffedcf]' : 'border-[#0a1738]'}`}
+            className={`w-64 h-64 sm:w-100 sm:h-100 lg:w-100 lg:h-100 rounded-[50%] overflow-hidden shadow-lg border-3 border-solid ${isDarkMode ? 'border-[#ffedcf]' : 'border-[#0a1738]'}`}
           >
             <img
               src="/images/erwan.jpg"
-              alt="Erwan Mettouchi - Développeur web"
+              alt="Erwan Mettouchi - Développeur web Junior"
               className="w-full h-full object-cover"
             />
           </div>

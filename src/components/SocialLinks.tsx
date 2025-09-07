@@ -1,4 +1,4 @@
-import { useTheme } from '../utils/ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 
 const SocialLinks = () => {
   const { isDarkMode } = useTheme();

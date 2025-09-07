@@ -1,9 +1,23 @@
 import { ChevronDown, FileDown } from 'lucide-react';
-import { useTheme } from '../utils/ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 import SocialLinks from './SocialLinks';
 
 const Intro = () => {
   const { isDarkMode } = useTheme();
+
+  const handleSmoothScroll = ({
+    e,
+    target,
+  }: {
+    e: React.MouseEvent<HTMLButtonElement>;
+    target: string;
+  }) => {
+    e.preventDefault();
+    const element = document.getElementById(target);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     // biome-ignore lint/correctness/useUniqueElementIds: <explanation>
@@ -30,19 +44,17 @@ const Intro = () => {
           que développeur.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-12">
-          <a
-            href="#projets"
-            className={`flex items-center justify-center text-md md:text-lg font-semibold ${isDarkMode ? 'text-[#262641ea] bg-[#ffedcf] hover:bg-[#fcd9a1] hover:text-[#383861ea]' : 'bg-[#262641ea] text-[#ffedcf] hover:text-[#fcd9a1] hover:bg-[#383861ea]'} py-2 px-4 rounded  transition-all duration-200`}
+          {/** biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+          <button
+            type="button"
+            onClick={(e) => {
+              handleSmoothScroll({ e, target: 'projets' });
+            }}
+            className={`flex flex-row cursor-pointer items-center justify-center text-md md:text-lg font-semibold border-1 py-2 px-4 rounded bg-transparent ${isDarkMode ? 'text-[#ffedcf]  border-[#ffedcf]  hover:bg-[#1E293B] hover:border-[#1E293B]' : 'text-[#262641ea] border-[#262641ea] hover:bg-[#fdd082] hover:border-[#fdd082] '} transition-all duration-200`}
           >
-            Mes Projets
-          </a>
-          <a
-            href="#parcours"
-            className={`flex flex-row items-center justify-center text-md md:text-lg font-semibold border-1 py-2 px-4 rounded bg-transparent ${isDarkMode ? 'text-[#ffedcf]  border-[#ffedcf]  hover:bg-[#1E293B] hover:border-[#1E293B]' : 'text-[#262641ea] border-[#262641ea] hover:bg-[#fdd082] hover:border-[#fdd082] '} transition-all duration-200`}
-          >
-            Mon parcours &nbsp;
+            Mes Projets &nbsp;
             <ChevronDown color={`${isDarkMode ? '#ffedcf' : '#081e44'}`} />
-          </a>
+          </button>
           <div className="flex flex-row flex-wrap justify-center items-center gap-5 md:gap-10">
             <SocialLinks />
             <a
