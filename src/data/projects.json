@@ -8,22 +8,7 @@
       "description": "Projet de fin de formation fait en équipe de 3 personnes. Site d'échange de compétences entre particuliers, systèmes d'inscription/connexion, messagerie instantanée...",
       "technologies": ["Node.js", "Express", "Sequelize", "React", "TypeScript"]
     },
-    {
-      "name": "pokedex",
-      "image": "/images/pokedex.png",
-      "github_link": "https://github.com/ErwanMettouchi/Pokedex",
-      "site_link": "https://pokedex-chi-ruby.vercel.app/",
-      "description": "Projet fait durant ma formation. Site permettant de regrouper tous les pokemons de la première génération, de voir leurs statistiques, de créer une équipe de 6 pokémons...",
-      "technologies": ["Node.js", "Express", "JavaScript"]
-    },
-    {
-      "name": "ocoffee",
-      "image": "/images/ocoffee.png",
-      "github_link": "https://github.com/ErwanMettouchi/Ocoffee",
-      "site_link": "https://ocoffee-eyzr.onrender.com/",
-      "description": "Projet fait durant ma formation. Site permettant de voir différents cafés du monde, pouvoir voir leur localisation. Formulaire de contact implémenté.",
-      "technologies": ["Node.js", "EJS", "CSS", "SQL", "Express js"]
-    },
+
     {
       "name": "portfolio",
       "image": "/images/portfolio.png",
@@ -31,6 +16,36 @@
       "site_link": "/",
       "description": "Le site que vous êtes en train de visiter! Portfolio fait après ma formation.",
       "technologies": ["React", "Tailwind CSS"]
+    },
+    {
+      "name": "juniordevjobhub",
+      "image": "/images/juniordevjobhub.png",
+      "github_link": "https://github.com/ErwanMettouchi/JuniorDevJobHub-backend",
+      "site_link": "/",
+      "description": "Projet personnel, fait pour m'aider durant ma recherche d'emploi. Scrapping Api de recherches d'emploi pour développeur junior. En cours...",
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "Sequelize"
+      ]
+    },
+    {
+      "name": "ocoffee",
+      "image": "/images/ocoffee.png",
+      "github_link": "https://github.com/ErwanMettouchi/Ocoffee",
+      "site_link": "https://ocoffee-eyzr.onrender.com/",
+      "description": "Projet fait durant ma formation. Site permettant de voir différents cafés du monde, pouvoir voir leur localisation. Formulaire de contact implémenté.",
+      "technologies": ["Node.js", "EJS", "CSS", "SQL", "Express"]
+    },
+    {
+      "name": "pokedex",
+      "image": "/images/pokedex.png",
+      "github_link": "https://github.com/ErwanMettouchi/Pokedex",
+      "site_link": "https://pokedex-chi-ruby.vercel.app/",
+      "description": "Projet fait durant ma formation. Site permettant de regrouper tous les pokemons de la première génération, de voir leurs statistiques, de créer une équipe de 6 pokémons...",
+      "technologies": ["Node.js", "Express", "JavaScript"]
     }
   ]
 }
